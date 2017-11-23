@@ -41,6 +41,7 @@ fun main(args: Array<String>) {
         print("Operasi : ")
         op = readLine()?.toInt()
 
+        // TODO : Benerin!! Input angkanya masih ngawur belum sesuai OOP!!
         when (op) {
             1 -> {
                 print("Masukkan angka pertama : ")
