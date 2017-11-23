@@ -41,45 +41,26 @@ fun main(args: Array<String>) {
         print("Operasi : ")
         op = readLine()?.toInt()
 
-        // TODO : Benerin!! Input angkanya masih ngawur belum sesuai OOP!!
-        when (op) {
-            1 -> {
+        when {
+            op != 0 && op!! < 5 -> {
                 print("Masukkan angka pertama : ")
                 val n1 = readLine()?.toDouble()
 
                 print("Masukkan angka kedua : ")
                 val n2 = readLine()?.toDouble()
 
-                Hitung(n1, n2).penjumlahan()
+
+                when (op) {
+                    1 -> Hitung(n1, n2).penjumlahan()
+                    2 -> Hitung(n1, n2).pengurangan()
+                    3 -> Hitung(n1, n2).pembagian()
+                    4 -> Hitung(n1, n2).perkalian()
+                }
             }
-            2 -> {
-                print("Masukkan angka pertama : ")
-                val n1 = readLine()?.toDouble()
-
-                print("Masukkan angka kedua : ")
-                val n2 = readLine()?.toDouble()
-
-                Hitung(n1, n2).pengurangan()
+            op == 5 -> {
+                println("Bye...")
+                exitProcess(0)
             }
-            3 -> {
-                print("Masukkan angka pertama : ")
-                val n1 = readLine()?.toDouble()
-
-                print("Masukkan angka kedua : ")
-                val n2 = readLine()?.toDouble()
-
-                Hitung(n1, n2).pembagian()
-            }
-            4 -> {
-                print("Masukkan angka pertama : ")
-                val n1 = readLine()?.toDouble()
-
-                print("Masukkan angka kedua : ")
-                val n2 = readLine()?.toDouble()
-
-                Hitung(n1, n2).perkalian()
-            }
-            5 -> exitProcess(0)
         }
-    } while (op != 5)
+    } while (true)
 }
